@@ -22,6 +22,9 @@ void ReadFile(Sudoku& puzzle, std::ifstream& File){
         
         puzzle.add(cx, cy, cnum);
     }
+    
+    std::cout << "Unsolved Puzzle:" <<std::endl;
+    puzzle.print();
 }
 
 int main(int argc, const char * argv[]) {
@@ -29,7 +32,6 @@ int main(int argc, const char * argv[]) {
     Sudoku puzzle;
     
     ReadFile(puzzle, file);
-    puzzle.print();
     
     return 0;
 }
