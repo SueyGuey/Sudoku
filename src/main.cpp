@@ -2,13 +2,34 @@
 //  main.cpp
 //  Sudoku
 //
-//  Created by Suhan Gui on 12/28/20.
+//  Created by Suhan Gui
 //
 
 #include <iostream>
+#include <fstream>
+#include <string>
+
+#include "board.h"
+
+void ReadFile(Sudoku& puzzle, std::ifstream& File){
+    std::string x, y, nums;
+    
+    while(File >> x >> y >> nums){
+        int cx, cy, cnum;
+        cx = std::stoi(x);
+        cy = std::stoi(y);
+        cnum = std::stoi(nums);
+        
+        puzzle.add(cx, cy, cnum);
+    }
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    std::ifstream file(argv[1]);
+    Sudoku puzzle;
+    
+    ReadFile(puzzle, file);
+    puzzle.print();
+    
     return 0;
 }

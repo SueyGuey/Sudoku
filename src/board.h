@@ -2,7 +2,7 @@
 //  board.hpp
 //  Sudoku
 //
-//  Created by Suhan Gui on 12/28/20.
+//  Created by Suhan Gui
 //
 #include <iostream>
 #include <vector>
@@ -15,8 +15,11 @@
 class Sudoku{
 public:
     Sudoku();
+    
+    void add(int x, int y, int num);
+    void print();
 private:
-    std::vector< int > board;
+    std::vector<std::vector<int> > board;
 };
 
 #endif /* board_h */
