@@ -14,7 +14,7 @@
 void ReadFile(Sudoku& puzzle, std::ifstream& File){
     std::string x, y, nums;
     
-    while(File >> x >> y >> nums){
+    while(File >> x >> y >> nums){ //adds num to puzzle
         int cx, cy, cnum;
         cx = std::stoi(x);
         cy = std::stoi(y);
@@ -32,6 +32,7 @@ int main(int argc, const char * argv[]) {
     Sudoku puzzle;
     
     ReadFile(puzzle, file);
+    puzzle.solve();
     
     return 0;
 }
